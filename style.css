@@ -33,7 +33,7 @@ main {
 }
 
 /* Photo de profil */
-.profile-picture {
+.header-profile-picture {
     animation: wave 4s ease-in-out infinite;
  /* Animation continue */
     display: block;
@@ -60,7 +60,7 @@ main {
 
 
 /* Nom principal */
-.name {
+.header-title-Mehdi-Khalloufi {
     font-family: Verdana, sans-serif;
     font-weight: bold;
     font-size: clamp(1.5rem, 3vw, 2.5rem); /* Responsif : 1.8rem à 3rem */
@@ -71,7 +71,7 @@ main {
 }
 
 /* Sous-titre */
-.subtitle {
+.header-subtitle {
     font-size: clamp(0.9rem, 2vw, 1.2rem); /* Responsif : 1rem à 1.5rem */
     color: #e0e5ec; /* Couleur neutre */
     margin-top: 5px;
