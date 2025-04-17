@@ -1,0 +1,13 @@
+:root {
+    /* Couleurs */
+    --color-text: #333;
+    --color-white: #fff;
+    --color-grey: #6e6e6e;
+    --color-subtitle: #e0e5ec;
+    --color-hover-bg: #333;
+    --color-hover-shadow: rgba(41, 41, 41, 0.251);
+    --color-gradient-1: #3a1c71;
+    --color-gradient-2: #6b2d93;
+    --color-gradient-3: #b185d8;
+    --color-gradient-4: #d7c1f8;
+}

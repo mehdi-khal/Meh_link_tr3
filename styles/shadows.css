@@ -1,0 +1,8 @@
+/* Ombres */
+
+:root {
+
+    --shadow-light: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.1), -0.25rem -0.25rem 0.5rem rgba(255, 255, 255, 0.329);
+    --shadow-heavy: 0.5rem 0.5rem 0.9375rem rgba(0, 0, 0, 0.15), -0.5rem -0.5rem 0.9375rem var(--color-hover-shadow);
+    
+}

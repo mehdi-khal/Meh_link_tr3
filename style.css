@@ -1,249 +1,182 @@
+
+
+@import "./styles/all_variables.css";
+
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #e0e5ec; /* Arrière-plan léger pour l'effet Neumorphism */
-    color: #333;
-    overflow: hidden; /* Empêche le débordement du logo en dehors de l'écran */
-    position: relative;
-    background: linear-gradient(45deg, #3a1c71, #6b2d93, #b185d8, #d7c1f8);
-    background-size: 200% 200%;
-    animation: gradientShift 10s ease infinite;
+  font-family: var(--font-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow: hidden;
+  position: relative;
+  color: var(--color-text);
+  background: linear-gradient(45deg, var(--color-gradient-1), var(--color-gradient-2), var(--color-gradient-3), var(--color-gradient-4));
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
 }
 
-/* Animation de fond */
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
-/* Section de contenu principal */
-main {
-    text-align: center;
+header {
+  text-align: center;
 }
 
-/* Photo de profil */
 .header-profile-picture {
-    animation: wave 4s ease-in-out infinite;
- /* Animation continue */
-    display: block;
-    margin: 10% auto 10px; /* Réduit le margin-top et augmente le margin-bottom */
-    height: clamp(120px, 20vw, 150px); /* Minimum 120px, adaptatif jusqu'à 150px */
-    width: clamp(120px, 20vw, 150px);
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center top;
-    box-shadow: 
-        8px 8px 15px rgba(0, 0, 0, 0.1), 
-        -8px -8px 15px rgba(255, 255, 255, 0.329); /* Ombre douce pour l'effet Neumorphism */
+  animation: spin 10s linear infinite;
+  display: inline-block;
+  margin: 10% auto var(--space-sm);
+  height: clamp(7.5rem, 20vw, 9.375rem);
+  width: clamp(7.5rem, 20vw, 9.375rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  box-shadow: var(--shadow-light);
 }
 
-/* Animation photo de profil */
-@keyframes wave {
-    0% { transform: rotate(0deg); }
-    25% { transform: rotate(-15deg); }
-    50% { transform: rotate(0deg); }
-    75% { transform: rotate(15deg); }
-    100% { transform: rotate(0deg); }
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-
-
-/* Nom principal */
 .header-title-Mehdi-Khalloufi {
-    font-family: Verdana, sans-serif;
-    font-weight: bold;
-    font-size: clamp(1.5rem, 3vw, 2.5rem); /* Responsif : 1.8rem à 3rem */
-    color: #ffffff;
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.329); /* Effet de lumière douce */
-    margin-bottom: 5px; /* Espacement réduit avec le sous-titre */
-    text-align: center; /* Centrage */
+  font-family: var(--font-title);
+  font-weight: bold;
+  font-size: var(--font-large);
+  color: var(--color-white);
+  text-shadow: 0.0625rem 0.0625rem 0.125rem rgba(255, 255, 255, 0.329);
+  margin-bottom: var(--space-xs);
 }
 
-/* Sous-titre */
 .header-subtitle {
-    font-size: clamp(0.9rem, 2vw, 1.2rem); /* Responsif : 1rem à 1.5rem */
-    color: #e0e5ec; /* Couleur neutre */
-    margin-top: 5px;
-    margin-bottom: 20px; /* Augmentation pour espacer des éléments suivants */
-    text-align: center;
-    font-weight: 400;
+  font-size: var(--font-base);
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  font-weight: 400;
 }
 
-/* Liens principaux (Behance, LinkedIn, Instagram) */
+.social-links-section {
+  margin-bottom: var(--space-md);
+}
+
 .btn {
-    display: block;
-    margin: 15px auto;
-    padding: 10px;
-    width: 200px;
-    color: #6e6e6e;
-    background-color: #ffffff;
-    text-decoration: none;
-    border-radius: 20px;
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1), -4px -4px 8px rgba(255, 255, 255, 0.329);
-    transition: all 0.3s ease;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: var(--space-sm) auto;
+  padding: var(--btn-padding);
+  min-width: var(--btn-min-width);
+  color: var(--color-grey);
+  background-color: var(--color-white);
+  text-decoration: none;
+  border-radius: var(--btn-radius);
+  box-shadow: var(--shadow-light);
+  transition: all 0.3s ease;
+  animation: reveal 0.6s ease forwards;
+  opacity: 0;
 }
 
 .btn:hover {
-    background-color: #333333;
-    color: #ffffff;
-    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.15), -8px -8px 15px rgba(41, 41, 41, 0.251);
+  background-color: var(--color-hover-bg);
+  color: var(--color-white);
+  box-shadow: var(--shadow-heavy);
 }
 
 .btn:active {
-    transform: scale(0.95);
-    animation: shake 0.2s ease;
+  transform: scale(0.95);
+  animation: shake 0.2s ease forwards;
+  animation-fill-mode: forwards;
 }
 
-/* Animation de secousse pour le lien */
 @keyframes shake {
-    0% { transform: translateX(-5px); }
-    50% { transform: translateX(5px); }
-    100% { transform: translateX(0); }
+  0% { transform: translateX(-0.3125rem); }
+  50% { transform: translateX(0.3125rem); }
+  100% { transform: translateX(0); }
 }
 
-/* Boutons */
-.button {
-    padding: 10px 5%;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: opacity 0.2s ease, transform 0.1s ease-in-out;
-    font-size: 1rem;
+@keyframes reveal {
+  0% { opacity: 0; transform: translateY(1.25rem); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
-.button:active {
-    opacity: 0.7;
-    transform: scale(0.95);
-}
+.btn:nth-of-type(1) { animation-delay: 0.2s; }
+.btn:nth-of-type(2) { animation-delay: 0.4s; }
+.btn:nth-of-type(3) { animation-delay: 0.6s; }
 
-/* Section des icônes */
 .icons-section {
-    margin-bottom: 5%;
+  margin-bottom: 5%;
+  text-align: center;
 }
 
 .icons-section h3 {
-    font-size: 1.2rem; /* Utilise des unités relatives */
-    color: #ffffff;
-    margin-bottom: 15px;
-    text-align: center;
+  font-size: var(--font-primary);
+  color: var(--color-white);
+margin: var(--space-md);
 }
 
 .icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap; /* Permet aux icônes de passer à la ligne */
-    gap: 15px;
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
 }
 
-.icons .icon {
-    width: 10%; /* Adaptatif */
-    max-width: 40px; /* Limite la taille pour les écrans larges */
-    height: auto; /* Garde les proportions */
-    object-fit: contain;
-    transition: transform 0.2s ease;
+.icons svg {
+  width: 2rem;
+  height: 2rem;
+  stroke-width: 2;
+  fill: none;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: draw 6s ease-in-out infinite;
 }
 
-.icons .icon:hover {
-    transform: scale(1.1);
+@keyframes draw {
+  0% { stroke-dashoffset: 1000; }
+  25% { stroke-dashoffset: 0; }
+  50% { stroke-dashoffset: 0; }
+  75% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 1000; }
 }
 
-/* Media queries */
-@media (max-width: 768px) {
-    .button {
-        padding: 10px 10%; /* Plus d'espace pour les écrans petits */
-        font-size: 0.9rem;
-    }
-
-    .icons-section h3 {
-        font-size: 1rem;
-    }
-
-    .icons .icon {
-        width: 15%; /* Icônes légèrement plus grandes sur mobile */
-    }
-}
-
-
-/* Footer */
 footer {
-    position: absolute;
-    bottom: 20px;
-    text-align: center;
-    width: 100%;
-    color: #fff;
-    font-size: 0.9rem;
-    padding: 10px 0; /* Ajout d'un peu d'espace autour du footer */
+  position: absolute;
+  bottom: var(--space-md);
+  width: 100%;
+  text-align: center;
+  color: var(--color-white);
+  font-size: var(--font-small);
+  padding: var(--space-sm) 0;
 }
 
-/* Contact dans le footer */
 footer a {
-    color: #fff;
-    text-decoration: underline;
+  color: var(--color-white);
+  text-decoration: underline;
 }
 
 footer a:hover {
-    color: #333333;
+  color: var(--color-hover-bg);
 }
 
-/* Responsivité : ajustements pour les écrans de taille moyenne */
-@media screen and (max-width: 768px) {
-    footer {
-        font-size: 0.9rem; /* Réduit légèrement la taille de la police pour les écrans plus petits */
-        bottom: 10px; /* Réduit l'espacement en bas de l'écran */
-        padding: 10px 0; /* Réduit l'espacement pour les écrans moyens */
-    }
+@media (max-width: 768px) {
+  .btn { font-size: var(--font-small); }
+  .icon { width: 15%; }
+  .icons-section h3 { font-size: var(--font-base); }
+  footer { font-size: var(--font-small); bottom: var(--space-sm); padding: var(--space-sm) 0; }
 }
 
-/* Responsivité : ajustements pour les très petits écrans */
-@media screen and (max-width: 480px) {
-    footer {
-        font-size: 0.8rem; /* Réduit encore la taille de la police pour les très petits écrans */
-        bottom: 5px; /* Réduit l'espacement en bas de l'écran */
-        padding: 5px 0; /* Réduit l'espacement pour les très petits écrans */
-    }
-}
-
-/* Animation de révélation */
-@keyframes reveal {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* Applique l'animation aux liens principaux */
-.bt {
-    animation: reveal 0.6s ease forwards;
-    opacity: 0; /* Empêche l'affichage avant animation */
-}
-
-/* Ajout de délai pour un effet décalé */
-.bt:nth-child(1) {
-    animation-delay: 0.2s;
-}
-
-.bt:nth-child(2) {
-    animation-delay: 0.4s;
-}
-
-.bt:nth-child(3) {
-    animation-delay: 0.6s;
+@media (max-width: 480px) {
+  footer { font-size: 0.8rem; bottom: var(--space-xs); padding: var(--space-xs) 0; }
 }

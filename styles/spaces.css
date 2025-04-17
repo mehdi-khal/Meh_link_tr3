@@ -1,0 +1,11 @@
+  /* Espacements */
+
+  :root{
+
+    --space-xs: 0.3125rem;
+    --space-sm: 0.625rem;
+    --space-md: 1.25rem;
+    --space-lg: 2.5rem;
+
+}
+  

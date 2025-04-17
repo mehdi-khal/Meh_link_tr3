@@ -1,0 +1,9 @@
+     /* Boutons */
+ 
+ :root{
+
+  --btn-padding: 0.5rem 1.25rem;
+  --btn-radius: 1.25rem;
+  --btn-min-width: 9.375rem;
+  
+ }

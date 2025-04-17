@@ -1,0 +1,10 @@
+  /* Tailles */
+  
+  :root {
+    
+    --font-small: clamp(0.75rem, 1.5vw, 0.9rem);
+  --font-base: clamp(0.9rem, 2vw, 1rem);
+  --font-medium: clamp(1.2rem, 2.5vw, 1.5rem);
+  --font-large: clamp(1.5rem, 3vw, 2.5rem);
+
+}
